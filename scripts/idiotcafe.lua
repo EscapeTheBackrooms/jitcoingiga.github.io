@@ -1,6 +1,14 @@
 --[[
 game: https://www.roblox.com/games/11217941123
 written by: hovac
+last updated: 2022/11/27
+
+none of this code is skidded and i wrote 100% of it from scratch
+none of this code is obfuscated, just minified
+]]
+--[[
+game: https://www.roblox.com/games/11217941123
+written by: hovac
 last updated: 2022/11/20
 
 none of this code is skidded and i wrote 100% of it from scratch
@@ -11,7 +19,7 @@ local main=Instance.new("Frame",gui);main.Name="main";main.BackgroundColor3=Colo
 local a=game:GetService("UserInputService")local b=game:GetService("RunService")local c;local d;local e;local f;function Lerp(g,h,i)return g+(h-g)*i end;local j;local k;local l=8;function Update(m)if not f then return end;if not c and k then main.Position=UDim2.new(f.X.Scale,Lerp(main.Position.X.Offset,k.X.Offset,m*l),f.Y.Scale,Lerp(main.Position.Y.Offset,k.Y.Offset,m*l))return end;local n=j-a:GetMouseLocation()local o=f.X.Offset-n.X;local p=f.Y.Offset-n.Y;k=UDim2.new(f.X.Scale,o,f.Y.Scale,p)main.Position=UDim2.new(f.X.Scale,Lerp(main.Position.X.Offset,o,m*l),f.Y.Scale,Lerp(main.Position.Y.Offset,p,m*l))end;main.InputBegan:Connect(function(q)if q.UserInputType==Enum.UserInputType.MouseButton1 or q.UserInputType==Enum.UserInputType.Touch then c=true;e=q.Position;f=main.Position;j=a:GetMouseLocation()q.Changed:Connect(function()if q.UserInputState==Enum.UserInputState.End then c=false end end)end end)main.InputChanged:Connect(function(q)if q.UserInputType==Enum.UserInputType.MouseMovement or q.UserInputType==Enum.UserInputType.Touch then d=q end end)b.Heartbeat:Connect(Update)
 local top=Instance.new("Frame",main);top.Name="top";top.BackgroundColor3=Color3.fromRGB(30, 30, 30);top.BorderSizePixel=0;top.Size=UDim2.new(1,0,0,40)
 local logo=Instance.new("ImageButton",top);logo.Name="logo";logo.BackgroundTransparency=1;logo.Size=UDim2.new(0,35,0,35);logo.Position=UDim2.new(0,5,0,2);logo.Image="rbxassetid://2235893609";if _G.fuckygui==true then gui:Destroy()return;end;_G.fuckygui=true;_G.resetidiot=true;logo.MouseButton1Down:Connect(function()gui:Destroy()_G.fuckygui=false;end)
-local title=Instance.new("TextLabel",top);title.Name="title";title.BackgroundTransparency=1;title.Size=UDim2.new(0,200,0,30);title.Position=UDim2.new(0,45,0,6);title.Text="stupid idiot gui | 1.1";title.TextXAlignment=0;title.TextScaled=true;title.TextColor3=Color3.fromRGB(255,255,255)
+local title=Instance.new("TextLabel",top);title.Name="title";title.BackgroundTransparency=1;title.Size=UDim2.new(0,200,0,30);title.Position=UDim2.new(0,45,0,6);title.Text="stupid idiot gui | 1.2";title.TextXAlignment=0;title.TextScaled=true;title.TextColor3=Color3.fromRGB(255,255,255)
 local content=Instance.new("Frame",main);content.Name="content";content.BackgroundTransparency=1;content.Position=UDim2.new(0,10,0,45);content.Size=UDim2.new(1,-10,1,-45)
 local grid=Instance.new("UIGridLayout",content);grid.Name="grid";grid.CellSize=UDim2.new(0,80,0,25)grid.SortOrder=Enum.SortOrder.LayoutOrder
 local addscript = function(text,run)local btn=Instance.new("TextButton",content);btn.Text=text;btn.Name=text;btn.MouseButton1Down:Connect(loadstring(run))btn.BorderSizePixel=0;btn.BackgroundColor3=Color3.fromRGB(25,25,25);btn.TextColor3=Color3.fromRGB(255,255,255);btn.TextWrapped=true;end
@@ -35,6 +43,7 @@ addscript("clear punches","local a=0;for b,c in pairs(game:GetService('Players')
 addscript("tp to manager office","game:GetService('Players').LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(-253.3255, -60.0068626, 20.499649, 0, 0.0831423625, 0.996537685, 0, 0.996537685, -0.0831423625, -1, 0, 0))")
 addscript("tp to employee spawn","game:GetService('Players').LocalPlayer.Character:SetPrimaryPartCFrame(workspace.EmployeeSpawnLocation.CFrame)")
 addscript("tp to customer spawn","game:GetService('Players').LocalPlayer.Character:SetPrimaryPartCFrame(workspace.CustomerSpawnLocation.CFrame)")
+addscript("tp to ray gun","game:GetService('Players').LocalPlayer.Character:SetPrimaryPartCFrame(workspace['laser crate']:WaitForChild('givepart').CFrame)")
 addtoggle("[NEW] (on) money-gen", "[NEW] (off) money-gen","game.StarterGui:SetCore('SendNotification',{Title='Money dupe warning',Text='You NEED to run this script for at least 85 seconds before you start making money $$$',Duration=5})_G.moneydupe=true","_G.moneydupe=false")
 addscript("drop all tools","for a,b in pairs(game:GetService('Players').LocalPlayer.Backpack:GetChildren())do b.Parent=game:GetService('Players').LocalPlayer.Character;b.Parent=workspace end")
 addscript("NUKE (requires $$$)","for a=1,100,1 do game:GetService('Players').LocalPlayer.PlayerGui.buysomething:FireServer(3)game:GetService('Players').LocalPlayer.PlayerGui.buysomething:FireServer(3)end;wait(1)for a,b in pairs(game:GetService('Players').LocalPlayer.Backpack:GetChildren())do if b.Name=='Grenade'or b.Name=='Gas grenade'then b.Parent=game:GetService('Players').LocalPlayer.Character;b:Activate()b.Parent=workspace;end end")
